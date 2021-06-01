@@ -1,0 +1,27 @@
+﻿@page "/"
+@inherits IndexBase
+@inject SignInManager<IdentityUser> _signInManager;
+@inject IHttpContextAccessor _httpContextAccessor;
+
+<h1 class="m-5">Football blog</h1>
+<hr />
+
+@if (BlogViewModel != null)
+{
+    <div class="row justify-content-center m-3">
+        @foreach (var blog in BlogViewModel)
+        {
+            if (blog.Published)
+            {
+
+                <BlogTeaser BlogViewModel="@blog"></BlogTeaser>
+            }
+            else if (_signInManager.IsSignedIn(_httpContextAccessor.HttpContext.User))
+            {
+
+                <BlogTeaser BlogViewModel="@blog"></BlogTeaser>
+            }
+        }
+    </div>
+
+}
