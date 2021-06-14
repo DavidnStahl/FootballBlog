@@ -28,7 +28,7 @@ namespace FootballBlog.Web.Pages
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            BlogViewModel.Category = Categories[1];
+            BlogViewModel.Category = Categories[0];
             BlogViewModel.Published = false;
         }
         protected async Task HandleValidSubmit()

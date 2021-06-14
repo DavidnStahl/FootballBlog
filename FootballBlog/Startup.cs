@@ -31,18 +31,21 @@ namespace FootballBlog
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication("Identity.Application")
-                .AddCookie();
-
-
+           
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
             services.AddDbContext<BlogContext>(options =>
                     options.UseSqlServer(
                         Configuration.GetConnectionString("BlogContextConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<BlogContext>();
 
             services.AddScoped<IBlogService, BlogService>();
@@ -70,7 +73,9 @@ namespace FootballBlog
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();

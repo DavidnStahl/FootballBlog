@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBlog.Web", "FootballBlog\FootballBlog.Web.csproj", "{8A7C93A9-56C5-4C10-AAFC-AA821F582AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballBlog.Web", "FootballBlog\FootballBlog.Web.csproj", "{8A7C93A9-56C5-4C10-AAFC-AA821F582AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazer.Components", "Blazer.Components\Blazer.Components.csproj", "{075CA932-2383-40D1-A698-437F35805E37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazer.Components", "Blazer.Components\Blazer.Components.csproj", "{075CA932-2383-40D1-A698-437F35805E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBlog.Core", "FootballBlog.Core\FootballBlog.Core.csproj", "{039B4991-316C-4BA2-9A27-94979BCC4C42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballBlog.Core", "FootballBlog.Core\FootballBlog.Core.csproj", "{039B4991-316C-4BA2-9A27-94979BCC4C42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBlog.Infrastructure", "FootballBlog.Infrastructure\FootballBlog.Infrastructure.csproj", "{C4A1ED2B-6826-49BB-9D66-E34232D316AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballBlog.Infrastructure", "FootballBlog.Infrastructure\FootballBlog.Infrastructure.csproj", "{C4A1ED2B-6826-49BB-9D66-E34232D316AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBlog.Models", "FootballBlog.Models\FootballBlog.Models.csproj", "{8818CB55-1EC1-409B-AC41-9E17EF54ACCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballBlog.Models", "FootballBlog.Models\FootballBlog.Models.csproj", "{8818CB55-1EC1-409B-AC41-9E17EF54ACCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

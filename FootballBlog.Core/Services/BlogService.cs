@@ -26,6 +26,7 @@ namespace FootballBlog.Core.Services
             blog.UserId = await _accountService.GetUserIdAsync();
 
             _unitOfWork.Blog.Add(blog);
+            _unitOfWork.Blog.Save();
         }
 
         public List<Blog> GetAllBlogs()

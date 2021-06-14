@@ -8,5 +8,6 @@ namespace FootballBlog.Infrastructure.UnitOfWork
     public interface IUnitOfWork : IDisposable
     {
         IBlogRepository Blog { get; }
+        int Complete();
     }
 }

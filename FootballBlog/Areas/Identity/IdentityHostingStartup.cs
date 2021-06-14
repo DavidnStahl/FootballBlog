@@ -19,7 +19,7 @@ namespace FootballBlog.Web.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DbContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<BlogContext>();
             });
         }

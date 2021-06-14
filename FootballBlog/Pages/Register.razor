@@ -1,0 +1,33 @@
+﻿@page "/register/"
+@inherits RegisterBase
+
+
+
+<EditForm Model="RegisterViewModel" OnValidSubmit="HandleValidSubmitAsync">
+    <DataAnnotationsValidator />
+
+    <div class="ml-lg-5 mr-lg-5" id="login">
+        <h4>Create a new account.</h4>
+        <hr />
+        <CustomValidation @ref="CustomValidation" />
+        <ValidationSummary />
+        <div class="form-group row">
+            <label for="Input-Email" class=" col-form-label">Email</label>
+            <InputText type="email" class="form-control" id="Input-Email" @bind-Value="RegisterViewModel.Email" />
+            <ValidationMessage For="@(() => RegisterViewModel.Email)" />
+        </div>
+        <div class="form-group row">
+            <label for="Input-Password" class=" col-form-label">Password</label>
+            <InputText type="password" class="form-control " id="Input-Password" @bind-Value="RegisterViewModel.Password" />
+            <ValidationMessage For="@(() => RegisterViewModel.Password)" />
+        </div>
+        <div class="form-group row">
+            <label for="Input-ConfirmPassword" class=" col-form-label">Confirm password</label>
+            <InputText type="password" class="form-control " id="Input-ConfirmPassword" @bind-Value="RegisterViewModel.ConfirmPassword" />
+            <ValidationMessage For="@(() => RegisterViewModel.ConfirmPassword)" />
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</EditForm>

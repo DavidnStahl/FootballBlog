@@ -1,0 +1,38 @@
+﻿@page "/login/"
+@inherits LoginBase
+
+
+
+<EditForm Model="@LoginViewModel" OnValidSubmit="HandleValidSubmitAsync">
+    <DataAnnotationsValidator />
+    
+    <div class="ml-lg-5 mr-lg-5" id="login">
+        <h1>Log in</h1>
+        <h4>Use a local account to log in.</h4>
+        <hr />
+        <CustomValidation @ref="CustomValidation" />
+        <ValidationSummary />
+        <div class="form-group row">
+            <label for="Input-Email" class=" col-form-label">Email</label>
+            <InputText type="email" class="form-control" id="Input-Email" @bind-Value="LoginViewModel.Email" />
+            <ValidationMessage For="@(() => LoginViewModel.Email)" />
+        </div>
+        <div class="form-group row">
+            <label for="Input-Password" class=" col-form-label">Password</label>
+            <InputText type="password" class="form-control " id="Input-Password" @bind-Value="LoginViewModel.Password" />
+            <ValidationMessage For="@(() => LoginViewModel.Password)" />
+        </div>
+        <div class="form-group  row">
+            <div class="checkbox">
+                <label asp-for="Input-RememberMe">
+                    <InputCheckbox id="Input-RememberMe" @bind-Value="@LoginViewModel.RememberMe" />
+                    Remember me
+                </label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+    </div>
+</EditForm>
+
